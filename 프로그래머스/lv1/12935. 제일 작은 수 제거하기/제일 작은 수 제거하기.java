@@ -14,12 +14,15 @@ class Solution {
                 //idx에 있는 값이 더 작으면 그 값으로 idx 옮기기
                if(arr[idx]>arr[i]){idx=i;} 
             }
+            
             //idx에 있는 값만 빼고 answer에 arr의 요소를 넣는 반복문
-            int j=0;
-            for(int i=0;i<arr.length-1;i++){
-                answer[i]=arr[j];
+            int j=0; //arr의 요소를 지정할 값 j 선언
+            for(int i=0;i<answer.length;i++){
+                //answer는 앞에서부터 순서대로 넣고 arr은 밑의 식으로 최소값에서 하나 뛰어 넘는다.
+                answer[i]=arr[j]; 
                 j++;
-                if(idx==j)j++; //
+                //j++한 값이 idx와 같으면 (가장 작은 값) j++ 한번 더 하여 뛰어넘기
+                if(idx==j)j++; 
             }
         }
         return answer;
