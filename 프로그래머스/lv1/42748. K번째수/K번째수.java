@@ -15,13 +15,18 @@ class Solution {
 	    	 tmp=new int[commands[i][1]-commands[i][0]+1];
              //5. tmp의 몇 번째 요소에 넣을 지 파악알 t 생성 (여기에 둬야 매 commands 요소마다 0으로 초기화)
 	    	 int t=0;
-             //6. a~b까지의 요소를 tmp[k]에 하나씩 넣음
+             //6. a~b까지의 요소를 tmp[k]에 하나씩 넣음 
+ 	     //-> 내가 생각한 방법으로 풀어서 썻는데, 메소드가 있었다!
+	     //5,6번을 그리고 tmp 선언하고 다시 바꾸고 이런게 
+	     //int[] temp = Arrays.copyOfRange(array, commands[i][0]-1, commands[i][1]);    이거 한 줄로 가능했었다 copyOfRange 알고 있기!
 	         for(int k=0;k<array.length;k++)
-	        	 if(commands[i][0]-1<=k&&k<=commands[i][1]-1) tmp[t++]=array[k];	
+	        	 if(commands[i][0]-1<=k&&k<=commands[i][1]-1) tmp[t++]=array[k];
              //7. 오름차순으로 정렬 후 commands[i][2]-1의 값을 answer[i]에 추가 
 	         Arrays.sort(tmp);
 	         answer[i]=tmp[commands[i][2]-1];
 	         }
         return answer;
+	
+	
     }
 }
