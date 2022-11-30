@@ -14,7 +14,8 @@ class Solution {
         for(int a:ingredient) {
 			sb.append(a);
 			if(sb.length()>3 && 
-               //아래의 조건이 없으면 시관초과가 뜬다.. 1231 지웠으면 한번 더 실행해야 한다
+                //indexOf를 쓰면 시간초과가 뜬다! 
+                //subSequence로 확인해야 하는듯.. index 구하고 반환하고 하는게 오래걸리는거같다
                sb.subSequence(sb.length()-4, sb.length()).equals("1231")){
 				sb.delete(sb.length()-4, sb.length());
 				answer++;
